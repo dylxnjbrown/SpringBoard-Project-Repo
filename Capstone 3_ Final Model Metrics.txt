@@ -1,0 +1,18 @@
+﻿Capstone 3: Final Model Specifications
+* Model Type: Deep Autoencoder (Multi-Layer Perceptron)
+* Input Features (12): valence, energy, danceability, tempo, loudness, key, mode, acousticness, instrumentalness, liveness, speechiness, popularity.
+* Encoder Architecture: * Input Layer (12 nodes)
+   * Hidden Layer 1 (8 nodes, ReLU activation)
+   * Bottleneck/Latent Layer (6 nodes, ReLU activation)
+* Decoder Architecture:
+   * Hidden Layer 2 (8 nodes, ReLU activation)
+   * Output Layer (12 nodes, Sigmoid activation)
+* Hyperparameters:
+   * Optimizer: Adam
+   * Loss Function: Mean Squared Error (MSE)
+   * Batch Size: 256
+   * Epochs: 30
+* Performance Results:
+   * Final Training MSE: 0.0382
+   * Final Validation MSE: 0.0410
+   * Clustering Silhouette Score: 0.345 (indicating distinct sonic groupings)
