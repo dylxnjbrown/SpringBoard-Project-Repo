@@ -1,0 +1,28 @@
+﻿Capstone Project: Model Metrics Summary
+Project Title: Assembling a 3-Peat Team (LA Dodgers 2025 Strategy)
+Target Variable: Predicted xwOBA (Expected Weighted On-Base Average)
+1. Model Overview
+* Final Selected Model: Tuned Random Forest Regressor
+* Modeling Goal: Predict the "Gold Standard" offensive performance (xwOBA) of MLB players to identify elite acquisition targets for the 2025 season.
+2. Feature Set (Inputs)
+The model uses the following high-correlation features to predict a player's true offensive value:
+* Batted Ball Quality: exit_velocity_avg (EV), barrel_batted_rate (Barrel%), hard_hit_percent, avg_swing_speed.
+* Plate Discipline: k_percent (K%), bb_percent (BB%), whiff_percent.
+* Traditional Volume: pa (Plate Appearances), hit, home_run.
+3. Model Hyperparameters (Tuned)
+The model was optimized using GridSearchCV to prevent overfitting and ensure reliable predictions for new 2025 data:
+* n_estimators: 200 (Number of trees in the forest)
+* max_depth: 15 (Max levels in each decision tree)
+* min_samples_split: 5
+* random_state: 42 (For reproducibility)
+4. Final Performance Metrics
+Evaluated on a held-out Test Set (20% of data):
+* Mean Absolute Error (MAE): 0.0436
+   * Interpretation: On average, the model's prediction of a player's xwOBA is accurate within ±.044 points. Given that a .400 xwOBA is elite and .320 is average, this is a very high level of precision.
+* R-Squared (R²) Score: 0.6139
+   * Interpretation: The model explains approximately 61.4% of the variance in a player's offensive output based solely on the input mechanics (swing speed, exit velocity, etc.).
+5. Feature Importance (Top 3)
+The model relies most heavily on these three factors when making a prediction:
+1. Barrel%: (Highest impact on offensive success)
+2. Exit Velocity: (Correlates strongly with extra-base hits)
+3. K%: (The primary indicator of plate discipline stability)
