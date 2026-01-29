@@ -1,46 +1,66 @@
-⚾ Assembling a 3-Peat Strategy: LA Dodgers 2025
-Data Science Capstone Project > Predicting elite performance using advanced Statcast metrics and Machine Learning.
+# ⚾ Assembling a 3-Peat Strategy: LA Dodgers 2025
+> **Data Science Capstone Project** > *Predicting elite performance using advanced Statcast metrics and Machine Learning to build a MLB Dynasty.*
 
-📋 Project Overview
-This project identifies high-impact player acquisitions for the Los Angeles Dodgers to maintain their championship dominance into the 2025 season. By moving past traditional stats like Batting Average and ERA, this analysis utilizes "Gold Standard" metrics (xwOBA and K%) to identify players whose underlying mechanics guarantee an elite performance floor.
+---
 
-🚀 Key Features
-Predictive Modeling: A Tuned Random Forest model predicting hitter success with an MAE of 0.0436.
+## 📋 Project Overview
+After a successful World Series run, the Los Angeles Dodgers face the challenge of maintaining dominance. This project utilizes a data-driven approach to identify high-impact player acquisitions for the 2025 season. 
 
-Statcast Integration: Analysis of raw mechanics including Barrel%, Exit Velocity, and Whiff rates.
+By moving past traditional "surface" stats like Batting Average or ERA, this analysis focuses on **"Gold Standard" mechanics**—xwOBA and K%—to ensure every new roster addition possesses an elite performance floor backed by physical contact quality.
 
-Automated Pipeline: Custom Python functions to clean and standardize messy MLB statistical exports.
+---
 
-📊 Model Performance
-The final model was optimized to prioritize precision, ensuring that "outlier" talents are correctly identified. | Metric | Value | | :--- | :--- | | Model | Random Forest Regressor | | R² Score | 0.6139 | | MAE | 0.0436 |
+## 🚀 Key Features
+* **Predictive Modeling:** Utilizes a Tuned Random Forest model to predict offensive value (xwOBA).
+* **Statcast Integration:** Analyzes raw mechanical data including **Barrel%**, **Hard Hit%**, and **Whiff Rates**.
+* **Targeted Identification:** Specifically identifies the top 3 hitter and pitcher acquisitions for the 2025 season.
 
-💡 Top Recommendations for 2025
-Based on the 2025 projection model, the following targets are recommended for the front office:
+---
 
-Hitters (Target: xwOBA)
-Aaron Judge (.459)
+## 📊 Model Performance
+The model was optimized using `GridSearchCV` to ensure high precision in predicting player success.
 
-Juan Soto (.429)
+| Metric | Value |
+| :--- | :--- |
+| **Final Model** | Tuned Random Forest Regressor |
+| **R² Score** | **0.6139** |
+| **Mean Absolute Error (MAE)** | **0.0436** |
 
-Shohei Ohtani (.426)
+> **Insight:** An MAE of 0.0436 indicates that our model can predict a player's true offensive output (xwOBA) with extreme accuracy, typically within a few percentage points of their actual season outcome.
 
-Pitchers (Target: K%)
-Zack Wheeler (33.3%)
+---
 
-Chris Sale (32.4%)
+## 💡 Top Acquisition Recommendations (2025)
 
-Logan Gilbert (32.3%)
+### **Elite Hitters (Target: xwOBA)**
+*Based on predicted expected outcomes and contact quality.*
+1.  **Aaron Judge** (.459 xwOBA)
+2.  **Juan Soto** (.429 xwOBA)
+3.  **Shohei Ohtani** (.426 xwOBA)
 
-🛠️ Tech Stack
-Language: Python 3.x
 
-Libraries: Pandas, Matplotlib, Scikit-Learn, Regex
 
-Environment: Jupyter Notebook
+### **Dominant Pitchers (Target: K%)**
+*Based on swing-and-miss dominance essential for post-season play.*
+1.  **Zack Wheeler** (33.3% K-Rate)
+2.  **Chris Sale** (32.4% K-Rate)
+3.  **Logan Gilbert** (32.3% K-Rate)
 
-📂 Repository Structure
-data/: Contains the raw stats (4).csv and stats (5).csv files.
 
-notebooks/: The main Data_Wrangling_EDA_Modeling.ipynb containing all logic.
+---
 
-reports/: The final PDF report and technical metrics summary.
+## 🛠️ Tech Stack
+* **Language:** Python 3.x
+* **Libraries:** `Pandas`, `Matplotlib`, `Scikit-Learn`, `Regex`
+* **Environment:** Jupyter Notebook
+
+---
+
+## 📂 How to Use This Repo
+1.  **Clone the repo:** `git clone https://github.com/your-username/dodgers-3-peat.git`
+2.  **Explore the Notebook:** Open `Data_Wrangling_EDA_Modeling.ipynb` to see the full analysis pipeline.
+3.  **View Results:** Refer to the `Final_Project_Report.pdf` for executive recommendations.
+
+---
+**Author:** Dylan Brown  
+**LinkedIn:** [Your Link Here]
